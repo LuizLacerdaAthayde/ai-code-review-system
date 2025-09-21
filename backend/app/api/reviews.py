@@ -13,7 +13,7 @@ async def submit_review(payload: dict, request: Request, bg: BackgroundTasks):
     if not code:
         raise HTTPException(status_code=400, detail="code is required")
     ip = request.client.host
-    if not allow(ip):
+    if not await allow(ip):
         raise HTTPException(status_code=429, detail="Rate limit exceeded. Try again later.")
     rid = await create_review(code, language, ip, bg)
     return {"id": rid, "status": "pending"}
@@ -45,3 +45,10 @@ async def list_reviews(
         if min_score is None or (d.get("result") and d["result"].get("score", 0) >= min_score):
             items.append(d)
     return {"items": items, "page": page, "page_size": page_size}
+
+
+@router.delete("/reset_rate_limits")
+async def reset_rate_limits():
+    db = get_db()
+    await db.rate_limits.delete_many({})
+    return {"status": "reset"}
