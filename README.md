@@ -10,23 +10,6 @@ Backend: FastAPI (Python), Frontend: React + Vite + TypeScript, Database: MongoD
 - Infra: Docker Compose for development, Render for backend, Vercel for frontend
 - LLM Provider: OpenRouter
 
-## Project structure
-.
-├── backend/              # FastAPI backend
-│   ├── app/              # application code
-│   ├── tests/            # unit tests
-│   ├── Dockerfile        # backend container
-│   ├── requirements.txt  # Python dependencies
-│   └── .env.example      # environment variables example
-│
-├── frontend/             # React frontend
-│   ├── src/              # frontend code
-│   ├── Dockerfile        # frontend container
-│   └── .env.example      # environment variables example
-│
-├── docker-compose.yml    # dev environment with backend, frontend, MongoDB
-└── README.md
-
 ## Requirements
 - Docker and Docker Compose installed
 - OpenRouter account and API key
