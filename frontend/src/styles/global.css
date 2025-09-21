@@ -1,0 +1,31 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap");
+
+:root{
+  --bg:#0b0c10;         /* fundo escuro elegante */
+  --panel:#111317;      /* cartões */
+  --panel-2:#151820;
+  --text:#e8eaed;
+  --muted:#9aa0a6;
+  --primary:#60a5fa;    /* azul */
+  --danger:#ef4444;
+  --radius:14px;
+  --shadow:0 10px 30px rgba(0,0,0,.3);
+}
+
+*{ box-sizing: border-box }
+html,body,#root{ height:100% }
+body{
+  margin:0;
+  background:linear-gradient(180deg,#0b0c10, #0e1015);
+  color:var(--text);
+  font-family:Inter,system-ui,Segoe UI,Roboto,Arial,Helvetica,sans-serif;
+}
+
+.container{ max-width:1100px; margin:0 auto; padding:24px }
+.grid{ display:grid; gap:16px }
+.card{
+  background:var(--panel);
+  border:1px solid #1e222b;
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+}

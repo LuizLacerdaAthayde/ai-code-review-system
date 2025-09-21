@@ -1,0 +1,11 @@
+.btn{
+  display:inline-flex; align-items:center; justify-content:center;
+  gap:8px; padding:10px 14px; border-radius:12px; border:1px solid transparent;
+  background:var(--primary); color:#0b0c10; font-weight:600; cursor:pointer;
+  transition:transform .05s ease, filter .2s ease, background .2s ease, border-color .2s ease;
+}
+.btn:disabled{ opacity:.55; cursor:not-allowed; filter:grayscale(.2) }
+.btn:active{ transform:translateY(1px) }
+.ghost{ background:transparent; color:var(--text); border-color:#2a2f3a }
+.ghost:hover{ background:var(--panel-2) }
+.danger{ background:var(--danger); color:#fff }
