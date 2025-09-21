@@ -1,0 +1,10 @@
+.header{
+  position:sticky; top:0; z-index:10; backdrop-filter:saturate(180%) blur(8px);
+  background:linear-gradient(180deg, rgba(17,19,23,.9), rgba(17,19,23,.6));
+  border-bottom:1px solid #1f2430;
+}
+.brand{ font-weight:700; letter-spacing:.2px }
+.nav{ display:flex; gap:18px }
+.link{ color:var(--muted); text-decoration:none; font-weight:600 }
+.link:hover{ color:var(--text) }
+.active{ color:var(--primary) }

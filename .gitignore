@@ -8,3 +8,6 @@ __pycache__/
 *.pyc
 
 frontend/dist
+
+.venv/
+venv/
