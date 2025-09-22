@@ -47,7 +47,7 @@ docker compose down
 
 ### Deployed URLs
 
-- **Frontend:** https://ai-code-review-system-le1wpsahy-luiz-lacerdas-projects-b642f864.vercel.app
+- **Frontend:** https://ai-code-review-system.vercel.app
 - **Backend:**  https://ai-code-review-system-r0tl.onrender.com
 - **API Docs (OpenAPI):** https://ai-code-review-system-r0tl.onrender.com/docs
 
