@@ -99,13 +99,13 @@ npm run dev
 - Rotate API keys if they are accidentally exposed
 - Frontend VITE_* variables are public, never put secrets there
 
+---
+
 ## Architecture Decisions
 - **Motor (AsyncIO driver):** ensures async database operations without blocking the event loop.
 - **Rate limiting via MongoDB TTL:** implemented without Redis to reduce complexity for MVP.
 - **Docker Compose:** simplifies local development by replicating production environment.
 - **LLM via OpenRouter:** abstracts multiple LLM providers, making it easy to switch models.
-
----
 
 ## Challenges and Solutions
 - **Rate Limiting:**  
@@ -124,15 +124,11 @@ npm run dev
   Authentication and IP whitelist issues.  
   ✅ Solution: standardized `MONGODB_URI` in `.env`.
 
----
-
 ## Scalability Considerations
 - **Backend:** FastAPI can scale horizontally using multiple workers (Uvicorn/Gunicorn) behind a load balancer.
 - **Database:** MongoDB supports replication and sharding for handling high data volume.
 - **Rate Limiting:** current approach (MongoDB TTL) works for MVP; Redis or distributed rate limiting would be better for scale.
 - **Task Processing:** currently synchronous. For heavy load, tasks should be offloaded to a queue system (Celery + Redis/RabbitMQ).
-
----
 
 ## Future Improvements
 - **Message Queue:** add RabbitMQ/Redis for async background task processing.
@@ -141,15 +137,11 @@ npm run dev
 - **Authentication/Authorization:** add JWT/Auth0 for secure access.
 - **Multi-LLM Support:** make pluggable architecture to support GPT, Claude, Mistral, etc.
 
----
-
 ## Trade-offs Due to Time Constraints
 - **Rate Limiting:** MongoDB used for simplicity; Redis would be more performant.
 - **Synchronous Processing:** easier to implement but less scalable. Queues would improve robustness.
 - **Basic JSON Validation:** regex + fallback parsing was faster; JSON Schema validation would be more robust.
 - **Infrastructure:** Docker Compose for local dev, but no full CI/CD pipeline due to time constraints.
-
----
 
 ## License
 MIT
