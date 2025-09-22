@@ -18,7 +18,7 @@ class ReviewIssue(BaseModel):
     detail: str
 
 class ReviewResult(BaseModel):
-    score: int  # 1-10
+    score: int
     issues: List[ReviewIssue] = []
     security: List[str] = []
     performance: List[str] = []
