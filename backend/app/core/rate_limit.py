@@ -1,4 +1,3 @@
-# app/core/rate_limit.py
 from datetime import datetime, timedelta
 from pymongo import ReturnDocument
 from pymongo.errors import DuplicateKeyError
@@ -13,7 +12,7 @@ async def allow(ip: str) -> bool:
     db = get_db()
     now = datetime.utcnow()
     key = _window_key(ip, now)
-    expires = now + timedelta(hours=1, minutes=5)  # margem p/ TTL
+    expires = now + timedelta(hours=1, minutes=5)
 
     try:
         doc = await db.rate_limits.find_one_and_update(
