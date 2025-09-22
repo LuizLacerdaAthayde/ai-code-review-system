@@ -45,6 +45,12 @@ docker compose down
 
 ## Production deployment
 
+## Deployed URLs
+
+- **Frontend:** https://ai-code-review-system-le1wpsahy-luiz-lacerdas-projects-b642f864.vercel.app
+- **Backend:**  https://ai-code-review-system-r0tl.onrender.com
+- **API Docs (OpenAPI):** https://ai-code-review-system-r0tl.onrender.com/docs
+
 ### Frontend (Vercel or Netlify)
 - Project root: frontend/
 - Build command: npm run build
